@@ -30,33 +30,10 @@ church.connect(
 //require('./src/models/Product');
 requireDir('./src/models');
 
-const Product = mongoose.model('Product');
-const Church = mongoose.model('Church');
-
+// const Product = mongoose.model('Product');
+//const Church = mongoose.model('Church');
 
 // Primeira rota
-app.get('/', (req, res) => {
-
-    Product.create({
-        title: 'React Native'
-        , description: 'Build native app  with React'
-        , url: 'http://github.com/facebook/react-native'
-    });
-
-    Church.create({
-        nameChurch: 'MINISTÉRIO LUZ DA PALAVRA'
-        , churchPastor: 'Wellington Candido'
-        , contact: '(21) 99999-8888'
-    });
-
-    Church.create({
-        nameChurch: 'IPAN'
-        , churchPastor: 'Emerson Pinheiro'
-        , contact: '(21) 99999-8888'
-    });
-
-
-    res.send( 'hello world - zord');
-});
+app.use('/api', require('./src/routes'));
 
 app.listen(3001);
