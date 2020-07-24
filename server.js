@@ -7,6 +7,19 @@ const requireDir = require('require-dir');
 
 // Iniciando o App
 const app = express();
+app.use(express.json());
+
+/*
+// Iniciando o banco da igreja
+church.connect(
+                'mongodb://localhost:27017/church'
+                , {
+                    useNewUrlParser: true
+                    , useUnifiedTopology: true
+                }
+);
+*/
+
 
 // Iniciando o banco de dados
 mongoose.connect(
@@ -14,15 +27,6 @@ mongoose.connect(
                     , { useNewUrlParser: true 
                         , useUnifiedTopology: true     
                       } 
-);
-
-// Iniciando o bando da igreja
-church.connect(
-                'mongodb://localhost:27017/church'
-                , {
-                    useNewUrlParser: true
-                    , useUnifiedTopology: true
-                }
 );
 
 
